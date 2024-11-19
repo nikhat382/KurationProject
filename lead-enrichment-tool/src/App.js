@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { auth, googleProvider, signInWithPopup } from './firebaseConfig';
 
@@ -108,28 +106,33 @@ function App() {
 
       {/* Google Login Button */}
       {!user ? (
-        <button onClick={handleLogin} style={{ display: 'flex',
-        alignItems: 'center', // Vertically centers items
-        justifyContent: 'center', // Horizontally centers content
-        backgroundColor: 'white',
-        border: '1px solid #ddd',
-        borderRadius: '5px',
-        padding: '10px 20px',
-        fontSize: '16px',
-        fontWeight: 'bold',
-        color: '#555',
-        cursor: 'pointer',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-        transition: 'background-color 0.3s ease',
-        gap: '10px',  }}>
+        <button
+          onClick={handleLogin}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'white',
+            border: '1px solid #ddd',
+            borderRadius: '5px',
+            padding: '10px 20px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            color: '#555',
+            cursor: 'pointer',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            transition: 'background-color 0.3s ease',
+            gap: '10px',
+          }}
+        >
           <img
             src="google.png"
-             alt="Google Login"
+            alt="Google Login"
             style={{
-              width: '170px',   // Fill the width of the container
-     height: '50px',  // Fill the height of the container
-     objectFit: 'cover',  // Ensures the image covers the box
-     marginRight: '10px',
+              width: '170px',
+              height: '50px',
+              objectFit: 'cover',
+              marginRight: '10px',
             }}
           />
           Log in with Google
@@ -174,7 +177,15 @@ function App() {
       {enrichedData && (
         <div>
           <h2>Enriched Lead Data</h2>
-          <pre>{JSON.stringify(enrichedData, null, 2)}</pre>
+          <pre style={{
+        backgroundColor: '#f4f4f4',
+        padding: '10px',
+        borderRadius: '5px',
+        overflowX: 'auto',
+        whiteSpace: 'pre-wrap',
+        wordWrap: 'break-word',
+      }}
+    >{JSON.stringify(enrichedData, null, 2)}</pre>
         </div>
       )}
     </div>
